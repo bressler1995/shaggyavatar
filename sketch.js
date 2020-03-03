@@ -16,8 +16,6 @@ let gesturereceived = false;
 let consentbutton, consenttext;
 
 function setup() {
-    mic = new p5.AudioIn();
-    mic.start();
 
     createCanvas(400, 400);
     //Degrees are a little easier to understand for me than that radian stuff
@@ -25,9 +23,11 @@ function setup() {
     consentbutton = createButton('I Consent');
     consentbutton.class('consent_button');
     consentbutton.mousePressed(give_consent);
+    consentbutton.position(0, 100);
 
     consenttext = createP('Zoinks needs access to your mic.')
     consenttext.class('consent_text');
+    consenttext.position(0, 20);
 }
 
 function draw() {
@@ -121,4 +121,7 @@ function give_consent() {
     consentbutton.class("hide_button");
     consenttext.class("hide_button");
     setTimeout(function(){dismiss = true}, 3000);
+
+    mic = new p5.AudioIn();
+    mic.start();
 }
