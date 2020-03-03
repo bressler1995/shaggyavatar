@@ -21,7 +21,7 @@ function setup() {
     //Degrees are a little easier to understand for me than that radian stuff
     angleMode(DEGREES);
     consentbutton = createButton('I Consent');
-    consent_button.id("consent_button");
+    consentbutton.id("consent_button");
     consentbutton.class('consent_button');
     // consentbutton.mousePressed(give_consent);
     consentbutton.position(0, 100);
