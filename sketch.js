@@ -26,7 +26,7 @@ function setup() {
     consentbutton.class('consent_button');
     consentbutton.mousePressed(give_consent);
 
-    consenttext = createP("Zoinks needs access to your mic.")
+    consenttext = createP('Zoinks needs access to your mic.')
     consenttext.class('consent_text');
 }
 
