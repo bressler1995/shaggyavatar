@@ -16,6 +16,7 @@ let gesturereceived = false;
 let consentbutton, consenttext;
 
 function setup() {
+    background(0);
     mic = new p5.AudioIn();
     mic.start();
 
