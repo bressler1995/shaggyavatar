@@ -18,9 +18,9 @@ canvas {
   font-size:14px;
   line-height: 18px;
   border: 2px solid #FFF;
-  bottom: 50px;
+  /* bottom: 50px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); */
   text-transform: uppercase;
 }
 
@@ -32,9 +32,9 @@ canvas {
   display: block;
   width:100%;
   max-width: 300px;
-  left:50%;
-  top:50%;
-  transform: translateX(-50%) translateY(-50%);
+  /* left:50%;
+  top:50%; */
+  /* transform: translateX(-50%) translateY(-50%); */
   font-family: 'Arial';
   font-size:14px;
   line-height:18px;
