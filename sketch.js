@@ -13,7 +13,7 @@ let dismiss = false;
 let dismisswhite = 255;
 let dismissblack = 220;
 let gesturereceived = false;
-let consentbutton, consenttext;
+let consentbutton, consenttext, consentbutton_actual;
 
 function setup() {
 
@@ -21,9 +21,13 @@ function setup() {
     //Degrees are a little easier to understand for me than that radian stuff
     angleMode(DEGREES);
     consentbutton = createButton('I Consent');
+    consent_button.id("consent_button");
     consentbutton.class('consent_button');
-    consentbutton.mousePressed(give_consent);
+    // consentbutton.mousePressed(give_consent);
     consentbutton.position(0, 100);
+
+    consentbutton_actual = document.getElementById("consent_button");
+    consentbutton_actual.addEventListener("click", give_consent);
 
     consenttext = createP('Zoinks needs access to your mic.')
     consenttext.class('consent_text');
