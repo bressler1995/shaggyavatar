@@ -12,6 +12,8 @@ let myshaggy3 = new wholeshaggy(0.7, 0);
 let dismiss = false;
 let dismisswhite = 255;
 let dismissblack = 220;
+let gesturereceived = false;
+let consentbutton, consenttext;
 
 function setup() {
     mic = new p5.AudioIn();
@@ -20,10 +22,17 @@ function setup() {
     createCanvas(400, 400);
     //Degrees are a little easier to understand for me than that radian stuff
     angleMode(DEGREES);
+    consentbutton = createButton('I Consent');
+    consentbutton.class('consent_button');
+    consentbutton.mousePressed(give_consent);
+
+    consenttext = createP("Zoinks needs access to your mic.")
+    consenttext.class('consent_text');
 }
 
 function draw() {
-    background(random(0, 50), random(31, 70), map(miclevel, 0.02, 0.95, 50, 170));
+    if (gesturereceived) {
+        background(random(0, 50), random(31, 70), map(miclevel, 0.02, 0.95, 50, 170));
 
     if(mouseX >= 300 && mouseX <= 400 && mouseY >= 350 && mouseY <= 400) {
         reachfullpower = true;
@@ -79,8 +88,8 @@ function draw() {
         textSize(14);
         textStyle(NORMAL);
         text('Zoinks', 332, 380);
-    pop();
-    push();
+        pop();
+        push();
         if(dismiss == true) {
             if(dismissblack >= 0) {
                 dismissblack -= 5;
@@ -100,7 +109,16 @@ function draw() {
         textSize(14);
         textStyle(NORMAL);
         text('X For Pulsate', width / 2 - 40, height / 2 + 2);
-    pop();
+        pop();
+    } else {
+        background(0);
+    }
+
 }
 
-setTimeout(function(){dismiss = true}, 3000)
+function give_consent() {
+    gesturereceived = true;
+    consentbutton.class("hide_button");
+    consenttext.class("hide_button");
+    setTimeout(function(){dismiss = true}, 3000);
+}

@@ -5,3 +5,37 @@ html, body {
 canvas {
   display: block;
 }
+
+.consent_button {
+  display: block;
+  position: fixed;
+  padding: 20px;
+  background: transparent;
+  color:#FFF;
+  font-family: 'Arial';
+  font-size:14px;
+  line-height: 18px;
+  border: 2px solid #FFF;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+}
+
+.hide_button {
+  display: none;
+}
+
+.consent_text {
+  display: block;
+  position: fixed;
+  width:100%;
+  max-width: 300px;
+  left:50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-family: 'Arial';
+  font-size:14px;
+  line-height:18px;
+  color:#FFF;
+}
