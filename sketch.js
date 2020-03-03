@@ -111,7 +111,7 @@ function draw() {
         text('X For Pulsate', width / 2 - 40, height / 2 + 2);
         pop();
     } else {
-        background(0);
+        // background(0);
     }
 
 }
